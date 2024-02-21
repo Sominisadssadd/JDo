@@ -1,0 +1,58 @@
+[versions]
+
+androidx-junit = "1.1.5"
+appcompat = "1.6.1"
+constraintlayout = "2.1.4"
+core-ktx = "1.12.0"
+coroutine-version = "1.7.1"
+espresso-core = "3.5.1"
+gson = "2.8.8"
+junit = "4.13.2"
+material = "1.11.0"
+retrofit-version = "2.9.0"
+room-version = "2.4.0"
+dagger-version = "2.38.1"
+dagger-runtime-version = "2.38.1"
+glide-version = "4.12.0"
+nav-version = "2.7.7"
+lifecycle-version = "2.4.0"
+agp = "8.2.0"
+kotlin = "1.9.10"
+
+
+
+[libraries]
+#Default
+junit = { module = "junit:junit", version.ref = "junit" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+#Glide
+image-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide-version" }
+#Room
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-version" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-version" }
+#Retrofit
+retrofit2-std = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit-version" }
+retrofit2-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit-version" }
+#Coroutines
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine-version" }
+coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine-version" }
+#Gson
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+#Navigation
+navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "nav-version" }
+navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "nav-version" }
+#Dagger
+dagger-std = { module = "com.google.dagger:dagger", version.ref = "dagger-version" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger-version" }
+dagger-runtime = { module = "com.google.dagger:dagger-android", version.ref = "dagger-runtime-version" }
+#Lifecycle
+lifycycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "lifecycle-version" }
+[plugins]
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidApplication = { id = "com.android.application", version.ref = "agp" }
