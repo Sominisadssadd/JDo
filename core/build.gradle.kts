@@ -2,11 +2,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.example.authentication"
+    namespace = "com.example.core"
     compileSdk = 34
 
     defaultConfig {
@@ -42,36 +41,7 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    //GLide
-    implementation(libs.image.glide)
-    //Room
-    //noinspection KaptUsageInsteadOfKsp
-    kapt(libs.room.compiler)
-    implementation(libs.room.runtime)
-    //Retrofit
-    implementation(libs.retrofit2.std)
-    implementation(libs.retrofit2.converter)
-    //Coroutines
-    implementation(libs.coroutine.core)
-    implementation(libs.coroutines.android)
-    //GSON
-    implementation(libs.gson)
-    //Navigation
-    implementation(libs.navigation.fragment)
-    implementation(libs.navigation.ui)
-    //Dagger
-    implementation(libs.dagger.std)
-    kapt(libs.dagger.compiler)
-    implementation(libs.dagger.runtime)
-    //Lifecycle
-    implementation(libs.lifycycle.runtime)
-
-    implementation(project(path = ":core"))
-
-
 }

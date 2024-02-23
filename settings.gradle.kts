@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "JDo"
 include(":app")
 include(":authentication")
+include(":core")
+include(":core")
