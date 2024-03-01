@@ -5,23 +5,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.authentication.databinding.AuthenticationRegisterLayoutBinding
 import com.example.authentication.presentation.utils.consts.REGISTER_SCREEN
 import com.example.authentication.presentation.utils.typers.FragmentType
+import com.example.core.base.BaseFragment
 
-class AuthenticationRegisterFragment : Fragment(), FragmentType {
+class AuthenticationRegisterFragment :
+    BaseFragment<AuthenticationRegisterLayoutBinding, AuthenticationRegisterFragmentViewModel>(
+        AuthenticationRegisterFragmentViewModel::class
+    ) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun setUpViews() {
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    override fun createBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): AuthenticationRegisterLayoutBinding {
+        return AuthenticationRegisterLayoutBinding.inflate(inflater, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,17 +35,6 @@ class AuthenticationRegisterFragment : Fragment(), FragmentType {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    override fun onDestroyView() {
-
-        super.onDestroyView()
-    }
-
-    fun newInstance(): AuthenticationRegisterFragment {
-        TODO()
-    }
-
-    override fun getFragmentType(): Int {
-        return REGISTER_SCREEN
-    }
+    fun newInstance() = AuthenticationRegisterFragment()
 
 }

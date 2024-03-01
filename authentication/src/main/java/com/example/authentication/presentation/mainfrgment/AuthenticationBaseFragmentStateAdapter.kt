@@ -1,15 +1,15 @@
-package com.example.authentication.presentation.basefragment
+package com.example.authentication.presentation.mainfrgment
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.authentication.presentation.mainfrgment.state.AuthenticationScreenState
 import com.example.authentication.presentation.login.AuthenticationLoginFragment
 import com.example.authentication.presentation.register.AuthenticationRegisterFragment
 import com.example.authentication.presentation.utils.consts.LOGIN_SCREEN
 import com.example.authentication.presentation.utils.consts.REGISTER_SCREEN
-import com.example.authentication.presentation.utils.typers.FragmentType
 
-class AuthenticationBaseFragmentStateAdapter<out T : List<FragmentType>>
+class AuthenticationBaseFragmentStateAdapter<out T : List<AuthenticationScreenState>>
     (
     activity: FragmentActivity,
     val listOfFragment: T

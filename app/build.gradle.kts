@@ -34,7 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
@@ -72,6 +72,9 @@ dependencies {
     implementation(libs.dagger.runtime)
     //Lifecycle
     implementation(libs.lifycycle.runtime)
+
+    implementation(project(path = ":core"))
+    implementation(project(path = ":authentication"))
 
 
 }
