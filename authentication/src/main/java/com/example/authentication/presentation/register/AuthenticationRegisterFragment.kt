@@ -20,7 +20,7 @@ class AuthenticationRegisterFragment :
     }
 
     override fun setUpViews() {
-        TODO("Not yet implemented")
+
     }
 
     override fun createBinding(

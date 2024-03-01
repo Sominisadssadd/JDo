@@ -8,9 +8,9 @@
         android:id="@+id/tabLayoutBaseFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
-        android:tabGravity="fill"
-        android:tabMode="fixed"
+        android:background="#FFFFFFFF"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2

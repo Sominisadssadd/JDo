@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <!--Login Screen String Resources-->
+    <string name="buttonLogin">Войти</string>
+    <string name="textViewLogin">Логин</string>
+    <string name="textViewPassword">Пароль</string>
+    <string name="forgotPassword">Забыли пароль?</string>
+
+    <!--Register Screen String Resources-->
+    <string name="buttonRegister">Зарегестрироваться</string>
+    <string name="textViewEnterLogin">Введите логин</string>
+    <string name="textViewEnterPassword">Введите пароль</string>
+    <string name="textViewEnterPhone">Введите телефон</string>
+    <string name="textViewEnterEmail">Введите e-mail</string>
+    <string name="google_icon_description">Google</string>
+    <string name="checkBoxManDescription">Мужчина</string>
+    <string name="checkBoxWomanDescription">Женщина</string>
+    <string name="policy">Политика конфеденциальности</string>
+
+</resources>

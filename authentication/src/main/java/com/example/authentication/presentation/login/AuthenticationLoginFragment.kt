@@ -15,7 +15,7 @@ class AuthenticationLoginFragment :
         AuthenticationLoginFragmentViewModel::class
     ) {
     override fun setUpViews() {
-        TODO("Not yet implemented")
+
     }
 
     override fun createBinding(
@@ -30,6 +30,7 @@ class AuthenticationLoginFragment :
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
     }
     fun newInstance() = AuthenticationLoginFragment()

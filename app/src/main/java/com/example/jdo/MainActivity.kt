@@ -14,9 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val test = findViewById<FrameLayout>(R.id.testFrag)
 
-        val fragment = AuthenticationBaseFragment()
 
     }
 }
