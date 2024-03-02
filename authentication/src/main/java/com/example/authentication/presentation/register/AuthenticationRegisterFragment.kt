@@ -14,13 +14,15 @@ class AuthenticationRegisterFragment :
     BaseFragment<AuthenticationRegisterLayoutBinding, AuthenticationRegisterFragmentViewModel>(
         AuthenticationRegisterFragmentViewModel::class
     ) {
-
+    lateinit var registerClickListener: () -> Unit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun setUpViews() {
-
+        binding.buttonRegister.setOnClickListener {
+            registerClickListener.invoke()
+        }
     }
 
     override fun createBinding(

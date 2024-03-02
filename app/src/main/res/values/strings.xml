@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">JDo</string>
+    <!--bottom navigation strings-->
+    <string name="bottom_navigation_item_profile">Профиль</string>
+    <string name="bottom_navigation_item_board">Доска</string>
+    <string name="bottom_navigation_item_messages">Сообщения</string>
+    <string name="bottom_navigation_item_challenge">Вызов</string>
 </resources>

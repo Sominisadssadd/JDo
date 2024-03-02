@@ -75,6 +75,9 @@ dependencies {
 
     implementation(project(path = ":core"))
     implementation(project(path = ":authentication"))
-
+    implementation(project(path = ":profile"))
+    implementation(project(path = ":board"))
+    implementation(project(path = ":message"))
+    implementation(project(path = ":challenge"))
 
 }

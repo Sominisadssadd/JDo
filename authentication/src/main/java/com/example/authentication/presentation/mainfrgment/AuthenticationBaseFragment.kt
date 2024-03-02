@@ -16,8 +16,11 @@ class AuthenticationBaseFragment :
         AuthenticationBaseFragmentViewModel::class
     ) {
 
+    lateinit var activityListener: () -> Unit
+
     val stateFragmentAdapter: AuthenticationBaseFragmentStateAdapter<List<AuthenticationScreenState>> by lazy {
         AuthenticationBaseFragmentStateAdapter(
+            activityListener,
             requireActivity(), listOf(
                 AuthenticationScreenState.AuthScreenLogin,
                 AuthenticationScreenState.AuthScreenRegister
@@ -31,11 +34,11 @@ class AuthenticationBaseFragment :
             TabLayoutMediator(tabLayoutBaseFragment, viewPagerBaseFragment) { tab, position ->
                 when (position) {
                     0 -> {
-                        tab.text = "Login"
+                        tab.text = getString(R.string.buttonLogin)
                     }
 
                     1 -> {
-                        tab.text = "Registration"
+                        tab.text = getString(R.string.buttonRegister)
                     }
                 }
             }.attach()
@@ -47,5 +50,10 @@ class AuthenticationBaseFragment :
         container: ViewGroup?
     ): AuthenticationBaseLayoutBinding {
         return AuthenticationBaseLayoutBinding.inflate(inflater, container, false)
+    }
+
+    companion object {
+        fun newInstance() = AuthenticationBaseFragment()
+
     }
 }

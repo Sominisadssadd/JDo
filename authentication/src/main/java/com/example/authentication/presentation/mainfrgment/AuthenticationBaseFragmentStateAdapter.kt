@@ -11,30 +11,30 @@ import com.example.authentication.presentation.utils.consts.REGISTER_SCREEN
 
 class AuthenticationBaseFragmentStateAdapter<out T : List<AuthenticationScreenState>>
     (
+    val listener: () -> Unit,
     activity: FragmentActivity,
     val listOfFragment: T
 ) : FragmentStateAdapter(activity) {
-
     override fun getItemCount() = PAGE_COUNT
-
     override fun createFragment(position: Int): Fragment {
-        val currentFragment = listOfFragment[position].getFragmentType()
-        return when (currentFragment) {
+        val currentFragment = listOfFragment[position]
+        return when (currentFragment.getFragmentType()) {
             LOGIN_SCREEN -> {
-                AuthenticationLoginFragment()
+                val fragment = currentFragment.createFragment() as AuthenticationLoginFragment
+                fragment.loginClickListener = listener
+                fragment
             }
-
             REGISTER_SCREEN -> {
-                AuthenticationRegisterFragment()
+                val fragment = currentFragment.createFragment() as AuthenticationRegisterFragment
+                fragment.registerClickListener = listener
+                fragment
             }
             else -> {
                 throw RuntimeException("Unknown fragment type")
             }
         }
     }
-
     companion object {
         private const val PAGE_COUNT = 2
     }
-
 }
