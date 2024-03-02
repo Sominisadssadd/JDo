@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/boardPoint"
+        android:icon="@drawable/bottom_menu_board_icon"
+        android:title="@string/bottom_navigation_item_board"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/messagePoint"
+        android:icon="@drawable/bottom_menu_messages_icon"
+        android:title="@string/bottom_navigation_item_messages"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/challengePoint"
+        android:icon="@drawable/bottom_menu_challange_icon"
+        android:title="@string/bottom_navigation_item_challenge"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/profilePoint"
+        android:icon="@drawable/bottom_menu_user_icon"
+        android:title="@string/bottom_navigation_item_profile"
+        app:showAsAction="ifRoom" />
+
+</menu>

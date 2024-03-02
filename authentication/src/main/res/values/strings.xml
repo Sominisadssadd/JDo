@@ -8,7 +8,7 @@
     <string name="forgotPassword">Забыли пароль?</string>
 
     <!--Register Screen String Resources-->
-    <string name="buttonRegister">Зарегестрироваться</string>
+    <string name="buttonRegister">Зарегистрироваться</string>
     <string name="textViewEnterLogin">Введите логин</string>
     <string name="textViewEnterPassword">Введите пароль</string>
     <string name="textViewEnterPhone">Введите телефон</string>
@@ -17,5 +17,9 @@
     <string name="checkBoxManDescription">Мужчина</string>
     <string name="checkBoxWomanDescription">Женщина</string>
     <string name="policy">Политика конфеденциальности</string>
+
+    <!--Base Screen String Resources-->
+    <string name="tabs_login">Войти</string>
+    <string name="tabs_register">Регистрация</string>
 
 </resources>

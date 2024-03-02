@@ -14,8 +14,12 @@ class AuthenticationLoginFragment :
     BaseFragment<AuthenticationLoginLayoutBinding, AuthenticationLoginFragmentViewModel>(
         AuthenticationLoginFragmentViewModel::class
     ) {
-    override fun setUpViews() {
 
+    lateinit var loginClickListener: () -> Unit
+    override fun setUpViews() {
+        binding.buttonLogin.setOnClickListener {
+            loginClickListener.invoke()
+        }
     }
 
     override fun createBinding(
@@ -24,14 +28,17 @@ class AuthenticationLoginFragment :
     ): AuthenticationLoginLayoutBinding {
         return AuthenticationLoginLayoutBinding.inflate(inflater, container, false)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
     }
+
     fun newInstance() = AuthenticationLoginFragment()
 }
