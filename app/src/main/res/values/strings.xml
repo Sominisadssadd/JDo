@@ -5,4 +5,8 @@
     <string name="bottom_navigation_item_board">Доска</string>
     <string name="bottom_navigation_item_messages">Сообщения</string>
     <string name="bottom_navigation_item_challenge">Вызов</string>
+
+    <!--User message information-->
+    <string name="permissions_granted">Разрешения предоставленны</string>
+    <string name="permissions_ungranted">Отказано в разрешении</string>
 </resources>
