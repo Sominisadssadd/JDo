@@ -2,7 +2,7 @@ package com.example.profile.presentation.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.core.base.BaseFragment
+import com.example.core.base.fragment.BaseFragment
 import com.example.profile.databinding.ProfileBaseFragmentBinding
 
 class ProfileBaseFragment : BaseFragment<ProfileBaseFragmentBinding, ProfileBaseFragmentViewModel>(

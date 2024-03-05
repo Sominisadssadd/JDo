@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    kotlin("plugin.serialization")
     id("kotlin-kapt")
 }
 
@@ -54,6 +55,7 @@ dependencies {
     kapt(libs.room.compiler)
     implementation(libs.room.runtime)
     //Retrofit
+    implementation(libs.okhttp)
     implementation(libs.retrofit2.std)
     implementation(libs.retrofit2.converter)
     //Coroutines
@@ -70,7 +72,14 @@ dependencies {
     implementation(libs.dagger.runtime)
     //Lifecycle
     implementation(libs.lifycycle.runtime)
-
+    //Serializable
+    implementation(libs.sirializable)
+    //Circle Loading
+    implementation(libs.circle.loading)
+    //Lottie
+    implementation(libs.lottie.animation)
+    //JBCRYPT
+    implementation(libs.jbcrypt)
     implementation(project(path = ":core"))
 
 

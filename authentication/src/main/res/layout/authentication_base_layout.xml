@@ -13,6 +13,8 @@
         app:tabGravity="fill"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerBaseFragment"
         android:layout_width="match_parent"

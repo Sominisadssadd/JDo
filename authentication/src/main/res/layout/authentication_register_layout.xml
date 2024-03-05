@@ -39,14 +39,7 @@
             android:inputType="textPassword"
             android:minEms="5" />
 
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/edge_regular"
-            android:hint="@string/textViewEnterEmail"
-            android:inputType="textPassword" />
+
 
         <EditText
             android:id="@+id/editTextPhone"
@@ -55,36 +48,10 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/edge_regular"
             android:hint="@string/textViewEnterPhone"
-            android:inputType="textPassword"
-            android:maxLength="10" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/checkBoxManGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/checkBoxManDescription" />
-
-                <RadioButton
-                    android:id="@+id/checkBoxWomanGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/checkBoxWomanDescription" />
-
-            </RadioGroup>
+            android:inputType="phone"
+            android:maxLength="11" />
 
 
-        </LinearLayout>
 
 
         <com.google.android.material.button.MaterialButton

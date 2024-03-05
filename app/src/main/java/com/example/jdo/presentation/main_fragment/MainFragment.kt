@@ -1,13 +1,14 @@
 package com.example.jdo.presentation.main_fragment
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.board.presentation.base.BoardBaseFragment
 import com.example.challendge.presentation.base.ChallengeBaseFragment
-import com.example.core.base.BaseFragment
-import com.example.jdo.R
+import com.example.core.base.fragment.BaseFragment
 import com.example.jdo.databinding.MainFragmentBinding
 import com.example.jdo.presentation.state.MainScreenState
 import com.example.message.presentation.base.MessageBaseFragment
@@ -19,11 +20,18 @@ class MainFragment :
         setupNavigation()
     }
 
+    //ADD MAPPER
     override fun createBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
     ): MainFragmentBinding {
         return MainFragmentBinding.inflate(inflater, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val fragmentBoard = BoardBaseFragment.newInstance()
+        startDestination(fragmentBoard)
     }
 
     private fun setupNavigation() {

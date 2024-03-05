@@ -1,4 +1,17 @@
 package com.example.authentication.presentation.utils.sharedPreferences
 
-class SharedPreferencesAuthentication {
+import android.content.Context
+
+class SharedPreferencesAuthentication(context: Context) {
+
+    private val sharedPreferences = context.getSharedPreferences(AUTH_STATE, Context.MODE_PRIVATE)
+    fun setLoginStatus(isLogged: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_LOGIN, isLogged).apply()
+    }
+    fun isLoggedIn() = sharedPreferences.getBoolean(KEY_IS_LOGIN, false)
+    companion object {
+        private const val AUTH_STATE = "auth_state"
+        const val KEY_IS_LOGIN = "isLogin"
+    }
+
 }

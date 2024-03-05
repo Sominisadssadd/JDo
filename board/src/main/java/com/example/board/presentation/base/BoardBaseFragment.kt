@@ -2,9 +2,8 @@ package com.example.board.presentation.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.board.databinding.BoardBaseFragmentBinding
-import com.example.core.base.BaseFragment
+import com.example.core.base.fragment.BaseFragment
 
 class BoardBaseFragment : BaseFragment<BoardBaseFragmentBinding, BoardBaseFragmentViewModel>(
     BoardBaseFragmentViewModel::class,

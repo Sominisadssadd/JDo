@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.authentication.R
 import com.example.authentication.databinding.AuthenticationBaseLayoutBinding
 import com.example.authentication.presentation.mainfrgment.state.AuthenticationScreenState
-import com.example.core.base.BaseFragment
+import com.example.authentication.presentation.utils.sharedPreferences.SharedPreferencesAuthentication
+import com.example.core.base.fragment.BaseFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class AuthenticationBaseFragment :
@@ -16,7 +16,7 @@ class AuthenticationBaseFragment :
         AuthenticationBaseFragmentViewModel::class
     ) {
 
-    lateinit var activityListener: () -> Unit
+     lateinit var activityListener: () -> Unit
 
     val stateFragmentAdapter: AuthenticationBaseFragmentStateAdapter<List<AuthenticationScreenState>> by lazy {
         AuthenticationBaseFragmentStateAdapter(
@@ -28,6 +28,10 @@ class AuthenticationBaseFragment :
         )
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
     override fun setUpViews() {
         binding.apply {
             viewPagerBaseFragment.adapter = stateFragmentAdapter
@@ -35,10 +39,12 @@ class AuthenticationBaseFragment :
                 when (position) {
                     0 -> {
                         tab.text = getString(R.string.buttonLogin)
+                        tab.setIcon(R.drawable.authentication_login_icon)
                     }
 
                     1 -> {
                         tab.text = getString(R.string.buttonRegister)
+                        tab.setIcon(R.drawable.authentication_register_icon)
                     }
                 }
             }.attach()
@@ -51,7 +57,10 @@ class AuthenticationBaseFragment :
     ): AuthenticationBaseLayoutBinding {
         return AuthenticationBaseLayoutBinding.inflate(inflater, container, false)
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+    }
     companion object {
         fun newInstance() = AuthenticationBaseFragment()
 

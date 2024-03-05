@@ -22,4 +22,11 @@
     <string name="tabs_login">Войти</string>
     <string name="tabs_register">Регистрация</string>
 
+    <!--Error dialog message-->
+    <string name="error_bad_internet_connection">Проверьте подключение</string>
+    <string name="error_empty_fields">Введите данные корректно</string>
+    <string name="error_user_not_found">Такого пользователя нет?$#</string>
+    <string name="error_wrong_password">Неверный пароль</string>
+    <string name="error_user_already_exist">Такой логин уже занят</string>
+
 </resources>
