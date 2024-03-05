@@ -3,7 +3,7 @@ package com.example.challendge.presentation.base
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.challendge.databinding.ChallengeBaseFragmentBinding
-import com.example.core.base.BaseFragment
+import com.example.core.base.fragment.BaseFragment
 
 class ChallengeBaseFragment :
     BaseFragment<ChallengeBaseFragmentBinding, ChallengeBaseFragmentViewModel>(

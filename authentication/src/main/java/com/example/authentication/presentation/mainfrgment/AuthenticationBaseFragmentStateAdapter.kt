@@ -21,7 +21,9 @@ class AuthenticationBaseFragmentStateAdapter<out T : List<AuthenticationScreenSt
         return when (currentFragment.getFragmentType()) {
             LOGIN_SCREEN -> {
                 val fragment = currentFragment.createFragment() as AuthenticationLoginFragment
-                fragment.loginClickListener = listener
+                fragment.apply {
+                    loginClickListener = listener
+                }
                 fragment
             }
             REGISTER_SCREEN -> {
@@ -29,11 +31,13 @@ class AuthenticationBaseFragmentStateAdapter<out T : List<AuthenticationScreenSt
                 fragment.registerClickListener = listener
                 fragment
             }
+
             else -> {
                 throw RuntimeException("Unknown fragment type")
             }
         }
     }
+
     companion object {
         private const val PAGE_COUNT = 2
     }

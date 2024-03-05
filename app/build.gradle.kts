@@ -72,6 +72,8 @@ dependencies {
     implementation(libs.dagger.runtime)
     //Lifecycle
     implementation(libs.lifycycle.runtime)
+    //Lottie
+    implementation(libs.lottie.animation)
 
     implementation(project(path = ":core"))
     implementation(project(path = ":authentication"))

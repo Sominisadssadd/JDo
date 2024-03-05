@@ -1,4 +1,4 @@
-package com.example.core.base
+package com.example.core.base.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,30 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelLazy
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import kotlin.reflect.KClass
 
-abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> (
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
     private val viewModelClass: KClass<VM>,
     private val viewModelFactory: ViewModelProvider.Factory? = null
-) :
-    Fragment() {
+) : Fragment() {
 
     private var _binding: VB? = null
     protected val binding: VB
         get() = requireNotNull(_binding) { throw RuntimeException("binding == null") }
 
-    protected val viewModel: VM by ViewModelLazy(
-        viewModelClass,
-        { viewModelStore },
-        {
-            requireNotNull(viewModelFactory) {
-                defaultViewModelProviderFactory
-            }
-        }
-    )
+    protected val viewModel: VM by lazy {
+        ViewModelProvider(this, viewModelFactory ?: ViewModelProvider.NewInstanceFactory()).get(viewModelClass.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,5 +45,4 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> (
         super.onDestroyView()
         _binding = null
     }
-
 }
