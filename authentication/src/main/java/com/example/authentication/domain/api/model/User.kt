@@ -14,8 +14,8 @@ data class User(
     val name: String = DEFAULT_USER_NAME,
     @SerialName("serName")
     val serName: String = DEFAULT_USER_SER_NAME,
-    @SerialName("patronymic")
-    val patronymic: String = DEFAULT_USER_PATRONYMIC,
+    @SerialName("email")
+    val email: String = DEFAULT_USER_EMAIL,
     @SerialName("phone")
     val phone: String,
     @SerialName("password")
@@ -33,7 +33,7 @@ data class User(
         private const val DEFAULT_USER_ID_VALUE = 0.0
         private const val DEFAULT_USER_NAME = "Name"
         private const val DEFAULT_USER_SER_NAME = "SerName"
-        private const val DEFAULT_USER_PATRONYMIC = "Patronymic"
+        private const val DEFAULT_USER_EMAIL = "email"
         private const val DEFAULT_USER_IMAGE_PATH = "empty"
     }
 }

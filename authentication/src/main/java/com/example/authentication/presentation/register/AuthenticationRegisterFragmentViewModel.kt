@@ -3,7 +3,7 @@ package com.example.authentication.presentation.register
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.authentication.data.datasources.api.RetrofitInstance
+import com.example.authentication.data.datasources.RetrofitInstance
 import com.example.authentication.domain.api.model.User
 import com.example.authentication.domain.api.usecase.RegisterUserUseCase
 import com.example.response.ResultResponse

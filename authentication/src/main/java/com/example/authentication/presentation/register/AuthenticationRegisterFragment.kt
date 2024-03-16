@@ -18,9 +18,11 @@ class AuthenticationRegisterFragment :
     ) {
     lateinit var actionRegister: AuthenticationRegisterFragmentAction
     lateinit var registerClickListener: () -> Unit
+    private lateinit var authSharedPreferences: SharedPreferencesAuthentication
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         actionRegister = AuthenticationRegisterFragmentAction(this, viewModel)
+        authSharedPreferences = SharedPreferencesAuthentication(requireContext())
     }
 
     override fun setUpViews() {
@@ -57,6 +59,8 @@ class AuthenticationRegisterFragment :
         viewModel.apply {
             success.observe(viewLifecycleOwner) {
                 registerClickListener.invoke()
+                val login = binding.editTextLogin.text.toString()
+                authSharedPreferences.setLoginData(login)
             }
             result.observe(viewLifecycleOwner) {
                 if (it.success.equals(true)) {

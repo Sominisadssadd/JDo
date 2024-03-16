@@ -36,7 +36,10 @@ class StartActivity : AppCompatActivity() {
         }
         val fragment = AuthenticationBaseFragment.newInstance().apply {
             activityListener = {
-                authSharedPreferences.setLoginStatus(true)
+                authSharedPreferences.apply {
+                    setLoginStatus(true)
+                }
+
                 toMainActivity()
             }
         }

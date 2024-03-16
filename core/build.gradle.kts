@@ -44,4 +44,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    //Retrofit
+    implementation(libs.okhhtp.interceptor)
+    implementation(libs.retrofit2.std)
+    implementation(libs.retrofit2.converter)
+    //Coroutines
+    implementation(libs.coroutine.core)
+    implementation(libs.coroutines.android)
+    //GSON
+    implementation(libs.gson)
 }

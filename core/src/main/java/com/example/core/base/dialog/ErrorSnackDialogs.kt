@@ -10,3 +10,4 @@ fun Fragment.snackBarErrorMessage(message: String){
     val view = this.requireView()
     Snackbar.make(view,message,Snackbar.LENGTH_LONG).show()
 }
+

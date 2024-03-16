@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
     id("kotlin-kapt")
+    kotlin("plugin.serialization")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -43,6 +45,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -54,6 +57,8 @@ dependencies {
     kapt(libs.room.compiler)
     implementation(libs.room.runtime)
     //Retrofit
+    implementation(libs.okhhtp.interceptor)
+    implementation(libs.okhttp)
     implementation(libs.retrofit2.std)
     implementation(libs.retrofit2.converter)
     //Coroutines
@@ -70,6 +75,14 @@ dependencies {
     implementation(libs.dagger.runtime)
     //Lifecycle
     implementation(libs.lifycycle.runtime)
+    //Firebase
+    implementation(platform(libs.firebase.bom))
+    //Chart
+    implementation(libs.pie.chart)
+    implementation(libs.mpchart)
+    //Serializable
+    implementation(libs.sirializable)
+    implementation(libs.jbcrypt)
 
     implementation(project(path = ":core"))
 }

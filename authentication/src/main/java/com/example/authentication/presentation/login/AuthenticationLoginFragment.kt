@@ -24,6 +24,7 @@ class AuthenticationLoginFragment :
         AuthenticationLoginFragmentViewModel::class
     ) {
 
+    private lateinit var authSharedPreferences: SharedPreferencesAuthentication
     //replace standart initial of actions with dagger
     val loginAction by lazy {
         AuthenticationLoginFragmentActionLogin(this, viewModel)
@@ -39,6 +40,7 @@ class AuthenticationLoginFragment :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        authSharedPreferences = SharedPreferencesAuthentication(requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -95,6 +97,8 @@ class AuthenticationLoginFragment :
             }
             success.observe(viewLifecycleOwner) {
                 loginClickListener.invoke()
+                val login = binding.editTextLogin.text.toString()
+                authSharedPreferences.setLoginData(login)
                 setLoadingStatus(false)
             }
         }
