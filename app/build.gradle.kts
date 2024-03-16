@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -33,6 +34,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+
     }
     buildFeatures {
         viewBinding = true
@@ -45,6 +47,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -74,6 +77,8 @@ dependencies {
     implementation(libs.lifycycle.runtime)
     //Lottie
     implementation(libs.lottie.animation)
+    //Firebase
+    implementation(platform(libs.firebase.bom))
 
     implementation(project(path = ":core"))
     implementation(project(path = ":authentication"))

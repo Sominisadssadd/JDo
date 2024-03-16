@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.example.jdo.R
 import com.example.jdo.databinding.ActivityMainBinding
 import com.example.jdo.presentation.main_fragment.MainFragment
+import com.google.firebase.Firebase
+import com.google.firebase.storage.FirebaseStorage
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val baseFragment = MainFragment.newInstance()
         supportFragmentManager.beginTransaction().replace(binding.frameLayoutMain.id, baseFragment)
             .commit()
+
     }
 
 

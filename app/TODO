@@ -1,3 +1,25 @@
 //Change  way of using dependency to Dagger
 //Add checking chars in EditText
-//
+//Add models also for each layer
+//Add mappers for task below
+//Сделать так что когда в firebase приходят одинковые пикчи они заменялись
+//!!!!Убрать action и переместить их логику во ViewModel т.к классы пересаздадутся и операции долгие не выполнятся кореектно
+и изменить lifeCycleScope на ViewModelScope
+//BroadCast reciever на проверку инета
+//Сделать общий класс для RetrofitInstance чтоб не плодить кучу классов в каждом модуле
+//Добавить сервис и вынести в него длительные операции, т.к если пользователь перейдет на другой экран, то
+операция не будет завершена и данные повредятся
+//Сделать в core Extenstion метод, который у всех ViewБудет видимость менять в зависимости от переданного парамера boolean
+
+
+NOW --> Сделать extension функцию которая будет возвращать логин пользователя
+
+
+FEATURE
+Add achievement and place that on profile screen
+Add opportunity to add new role in user board context
+Add opportunity to change font in all app
+
+Короч, фишка - пользователи могу кастомизировать и изменять приложение
+
+Иронично, to do в TO DO проекте)

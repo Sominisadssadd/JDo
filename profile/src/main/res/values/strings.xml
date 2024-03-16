@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="imageUrlIsEmpty">Не удалось загрузить изображение</string>
+
+    <!--hint-->
+    <string name="til_hint_phone">Телефон</string>
+    <string name="til_hint_serName">Фамилия</string>
+    <string name="til_hint_name">Имя</string>
+    <string name="til_hint_email">Электронная почта</string>
+
+
+    <!--defaultViewDescription-->
+    <string name="change_user_info_button_save_changes">Сохранить изменения</string>
+
+
+    <!--messages-->
+
+    <string name="snack_bar_message_success">Успешно</string>
+
+    <!--error-->
+    <string name="error_wrong_email">Некорректный адрес электроной почты</string>
+    <string name="error_wrong_phone">Некорректный номер телефона</string>
+    <string name="error_wrong_name_lenght">Имя не может быть пустым</string>
+    <string name="error_wrong_serName_lenght">Фамилия не может быть пустой</string>
+
+
+</resources>
