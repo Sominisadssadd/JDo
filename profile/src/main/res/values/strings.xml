@@ -14,7 +14,6 @@
 
 
     <!--messages-->
-
     <string name="snack_bar_message_success">Успешно</string>
 
     <!--error-->
@@ -22,6 +21,7 @@
     <string name="error_wrong_phone">Некорректный номер телефона</string>
     <string name="error_wrong_name_lenght">Имя не может быть пустым</string>
     <string name="error_wrong_serName_lenght">Фамилия не может быть пустой</string>
+    <string name="error_connection_erorr">Проблема с соединением</string>
 
 
 </resources>

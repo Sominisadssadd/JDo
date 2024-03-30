@@ -12,6 +12,7 @@ import com.example.core.base.fragment.BaseFragment
 import com.example.core.extension.getUniqueValueFormString
 import com.example.profile.databinding.ProfileBaseFragmentBinding
 import com.example.profile.presentation.changeinfo.ChangeInfoFragment
+import com.example.profile.presentation.mainprofile.MainProfileFragment
 import com.example.profile.presentation.utils.file.FileDataExtractor
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.components.Legend
@@ -44,7 +45,7 @@ class ProfileBaseFragment : BaseFragment<ProfileBaseFragmentBinding, ProfileBase
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            val fragment = ChangeInfoFragment(requireContext())
+            val fragment = MainProfileFragment(requireContext())
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(testFrame.id, fragment).commit()
         }

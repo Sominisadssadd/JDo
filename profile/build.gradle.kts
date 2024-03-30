@@ -84,5 +84,7 @@ dependencies {
     implementation(libs.sirializable)
     implementation(libs.jbcrypt)
 
+    implementation(libs.lottie.animation)
+
     implementation(project(path = ":core"))
 }
