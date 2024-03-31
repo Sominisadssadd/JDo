@@ -11,6 +11,7 @@
 операция не будет завершена и данные повредятся
 //Сделать в core Extenstion метод, который у всех ViewБудет видимость менять в зависимости от переданного парамера boolean
 
+//!!!!!!Сделать чтоб верхний TopAppBar описывал текущий фрагМЕНТ!!!!!!!!!!!
 
 NOW --> Сделать extension функцию которая будет возвращать логин пользователя
 
@@ -23,3 +24,30 @@ Add opportunity to change font in all app
 Короч, фишка - пользователи могу кастомизировать и изменять приложение
 
 Иронично, to do в TO DO проекте)
+
+
+
+//Сделать чтоб для каждого фрагмента была бы описание в topAppBar
+
+//            val entries = arrayListOf<PieEntry>().apply {
+//                add(PieEntry(18.5f, "Green"))
+//                add(PieEntry(26.7f, "Yellow"))
+//                add(PieEntry(24.0f, "Red"))
+//
+//            }
+//
+//            val colors = arrayListOf<Int>().apply {
+//                add(Color.GREEN);
+//                add(Color.YELLOW);
+//                add(Color.RED);
+//            }
+//
+//            val dataSet = PieDataSet(entries,"This Diagramm").apply {
+//                setColors(colors)
+//                valueTextSize = 12f
+//            }
+//
+//            val pieData = PieData(dataSet)
+//            pieChart.data = pieData
+//            pieChart.description.isEnabled = false;
+//            pieChart.invalidate()
