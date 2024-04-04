@@ -44,11 +44,6 @@ class ProfileBaseFragment : BaseFragment<ProfileBaseFragmentBinding, ProfileBase
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
-            val fragment = MainProfileFragment(requireContext())
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(testFrame.id, fragment).commit()
-        }
     }
 
     companion object {
