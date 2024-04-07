@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.navArgument
 import com.bumptech.glide.Glide
 import com.example.core.base.dialog.snackBarErrorMessage
 import com.example.core.base.dialog.snackBarMessage
@@ -57,6 +58,7 @@ class ChangeInfoFragment(context: Context) :
     }
 
     private fun observableEvents() {
+        //СДЕЛАТЬ BASE TRANSACTION FRAGMENT, и потом в каждом модуле сделать своим transaction фрагменты
         viewModel.apply {
             success.observe(viewLifecycleOwner) {
                 val message = getString(R.string.snack_bar_message_success)
@@ -122,6 +124,12 @@ class ChangeInfoFragment(context: Context) :
         container: ViewGroup?
     ): ProfileChangeInfoFragmentBinding {
         return ProfileChangeInfoFragmentBinding.inflate(inflater, container, false)
+    }
+
+    companion object {
+        fun newInstance(context: Context): ChangeInfoFragment {
+            return ChangeInfoFragment(context)
+        }
     }
 
 }

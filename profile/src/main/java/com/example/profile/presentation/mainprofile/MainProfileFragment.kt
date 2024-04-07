@@ -7,24 +7,41 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.core.base.dialog.snackBarErrorMessage
 import com.example.core.base.dialog.snackBarMessage
 import com.example.core.base.fragment.BaseFragment
 import com.example.profile.R
 import com.example.profile.databinding.MainProfileFragmentBinding
+import com.example.profile.presentation.changeinfo.ChangeInfoFragment
+import com.example.profile.presentation.settings.SettingsProfileFragment
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 
 
-class MainProfileFragment(context: Context) : BaseFragment<MainProfileFragmentBinding, MainProfileFragmentViewModel>(
-    MainProfileFragmentViewModel::class,
-    MainProfileViewModelFactory(context)
-) {
+class MainProfileFragment(
+
+    context: Context
+) :
+    BaseFragment<MainProfileFragmentBinding, MainProfileFragmentViewModel>(
+        MainProfileFragmentViewModel::class,
+        MainProfileViewModelFactory(context)
+    ) {
+
+    var navCallback: ((Fragment) -> Unit)? = null
     override fun setUpViews() {
         binding.apply {
-
+            buttonChangeInfo.setOnClickListener {
+                val changeIF = ChangeInfoFragment.newInstance(requireContext())
+                navCallback?.invoke(changeIF)
+            }
+            buttonSettings.setOnClickListener {
+                val settingsF = SettingsProfileFragment.newInstance()
+                navCallback?.invoke(settingsF)
+            }
         }
     }
 
@@ -33,6 +50,7 @@ class MainProfileFragment(context: Context) : BaseFragment<MainProfileFragmentBi
         observableEvents()
         viewModel.getUserInfo()
     }
+
     private fun observableEvents() {
         viewModel.apply {
             error.observe(viewLifecycleOwner) {
@@ -64,7 +82,8 @@ class MainProfileFragment(context: Context) : BaseFragment<MainProfileFragmentBi
                         cardViewSample.visibility = View.GONE
                     } else {
                         loadingAnimtaion.visibility = View.INVISIBLE
-                        cardViewSample.visibility = View.VISIBLE //Просто тестируем, если будет ошибка то должна быть другая анимашка
+                        cardViewSample.visibility =
+                            View.VISIBLE //Просто тестируем, если будет ошибка то должна быть другая анимашка
                     }
                 }
             }

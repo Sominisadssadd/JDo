@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.core.extension.getCurrentUserLogin
 import com.example.database.models.profile.ProfileUser
 import com.example.profile.R
 import com.example.profile.data.remote_data_source.api.ProfileApiRepositoryImpl
@@ -114,6 +115,8 @@ class ChangeInfoFragmentViewModel(private val context: Context) : ViewModel() {
         )
         changeUserData(user)
         getUserData()
+        //ДОБАВИТЬ SNAPSHOT чтоб когда фотка обновилась, не переходя на
+        //другой экран фотка обновлялась
     }
 
     private fun checkInputDataIsCorrect(
