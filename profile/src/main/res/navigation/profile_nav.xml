@@ -2,10 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/profile_nav"
-    app:startDestination="@id/changeInfoFragment">
-
+    app:startDestination="@id/mainProfileFragment">
+    <fragment
+        android:id="@+id/mainProfileFragment"
+        android:name="com.example.profile.presentation.mainprofile.MainProfileFragment"
+        android:label="MainProfileFragment" >
+        <action
+            android:id="@+id/action_mainProfileFragment_to_changeInfoFragment"
+            app:destination="@id/changeInfoFragment" />
+        <action
+            android:id="@+id/action_mainProfileFragment_to_settingsProfileFragment"
+            app:destination="@id/settingsProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsProfileFragment"
+        android:name="com.example.profile.presentation.settings.SettingsProfileFragment"
+        android:label="SettingsProfileFragment" />
     <fragment
         android:id="@+id/changeInfoFragment"
         android:name="com.example.profile.presentation.changeinfo.ChangeInfoFragment"
-        android:label="ChangeInfoFragment" />
+        android:label="ChangeInfoFragment" >
+
+        <argument
+            android:name="context"
+            app:argType="android.content.Context" />
+    </fragment>
 </navigation>

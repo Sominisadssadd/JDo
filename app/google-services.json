@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "605529243338",
+    "project_id": "jdoproject-b44ac",
+    "storage_bucket": "jdoproject-b44ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605529243338:android:7089d8908570381c09fe33",
+        "android_client_info": {
+          "package_name": "com.example.jdo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDLGmzE1pt4b9x9gFS1vZp1vnsGY2UKPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605529243338:android:329efe3e4652847809fe33",
+        "android_client_info": {
+          "package_name": "com.example.jdo_backend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDLGmzE1pt4b9x9gFS1vZp1vnsGY2UKPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

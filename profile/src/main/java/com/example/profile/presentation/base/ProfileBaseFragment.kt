@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.net.toUri
+import androidx.fragment.app.Fragment
 import com.example.core.base.fragment.BaseFragment
 import com.example.core.extension.getUniqueValueFormString
 import com.example.profile.databinding.ProfileBaseFragmentBinding
 import com.example.profile.presentation.changeinfo.ChangeInfoFragment
+import com.example.profile.presentation.mainprofile.MainProfileFragment
 import com.example.profile.presentation.utils.file.FileDataExtractor
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.components.Legend
@@ -34,6 +36,7 @@ class ProfileBaseFragment : BaseFragment<ProfileBaseFragmentBinding, ProfileBase
         }
     }
 
+
     override fun createBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -41,13 +44,26 @@ class ProfileBaseFragment : BaseFragment<ProfileBaseFragmentBinding, ProfileBase
         return ProfileBaseFragmentBinding.inflate(inflater, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            val fragment = ChangeInfoFragment(requireContext())
+            val fragment = MainProfileFragment(requireContext()).apply {
+                navCallback = {
+                    navigateTo(it)
+                }
+            }
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(testFrame.id, fragment).commit()
+                .replace(profileBaseFragmentFrame.id, fragment)
+                .commit()
         }
+    }
+
+    private fun navigateTo(fragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(binding.profileBaseFragmentFrame.id, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     companion object {

@@ -26,4 +26,10 @@ class SettingsProfileFragment :
     ): ProfileSettingsFragmentBinding {
         return ProfileSettingsFragmentBinding.inflate(inflater, container, false)
     }
+
+    companion object {
+        fun newInstance(): SettingsProfileFragment {
+            return SettingsProfileFragment()
+        }
+    }
 }
