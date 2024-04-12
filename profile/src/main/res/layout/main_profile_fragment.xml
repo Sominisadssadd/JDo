@@ -133,14 +133,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@id/cardViewSample"
-        tools:text="Редактировать профиль" />
+        android:text="Редактировать профиль" />
 
     <Button
         android:id="@+id/buttonSettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/buttonChangeInfo"
-        tools:text="Настройки" />
+        android:text="Настройки" />
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -149,7 +149,9 @@
         android:layout_height="match_parent"
         android:visibility="invisible"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/loading_animation" />
+        app:lottie_rawRes="@raw/loading_animation"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="3dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
