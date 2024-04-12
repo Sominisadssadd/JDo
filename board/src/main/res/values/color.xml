@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_priority_high">#FF6D6D</color>
+    <color name="color_priority_mid">#FFC107</color>
+    <color name="color_priority_low">#A4FF6B</color>
+</resources>

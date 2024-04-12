@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
     id("kotlin-kapt")
+    kotlin("plugin.serialization")
     id("com.google.gms.google-services")
 }
 
@@ -77,6 +78,10 @@ dependencies {
     //Chart
     implementation(libs.pie.chart)
     implementation(libs.mpchart)
+    //Serializable
+    implementation(libs.sirializable)
+    //lottie
+    implementation(libs.lottie.animation)
 
     implementation(project(path = ":core"))
 }

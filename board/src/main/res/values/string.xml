@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="priority_array">
+        <item name="priority_low">Не срочно</item>
+        <item name="priority_mid">Как можно быстрее</item>
+        <item name="priority_high">Срочно</item>
+    </string-array>
+
+    <string-array name="status_array">
+        <item name ="status_doing">Выполняется</item>
+        <item name ="status_done">Выполнено</item>
+        <item name ="status_need_to_do">К выполнению</item>
+    </string-array>
+
+
+</resources>
