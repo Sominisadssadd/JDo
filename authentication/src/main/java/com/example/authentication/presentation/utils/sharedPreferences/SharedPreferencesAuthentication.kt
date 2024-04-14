@@ -11,11 +11,16 @@ class SharedPreferencesAuthentication(context: Context) {
     fun setLoginData(login: String){
         sharedPreferences.edit().putString(KEY_LOGIN_DATA,login).apply()
     }
+
+    fun setIdData(id: Int) {
+        sharedPreferences.edit().putInt(KEY_ID_DATA, id).apply()
+    }
     fun isLoggedIn() = sharedPreferences.getBoolean(KEY_IS_LOGIN, false)
     companion object {
         private const val AUTH_STATE = "auth_state"
         const val KEY_IS_LOGIN = "isLogin"
         const val KEY_LOGIN_DATA = "login"
+        const val KEY_ID_DATA = "id"
     }
 
 }

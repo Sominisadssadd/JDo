@@ -29,6 +29,7 @@ class AuthenticationLoginFragmentActionLogin(
             }
             .launchIn(fragment.lifecycleScope)
     }
+
     fun checkUserIsExist(login: String, password: String, userData: User?) {
         if (checkEmptyFields(login, password)) {
             val errorMessage = fragment.getString(R.string.error_empty_fields)
@@ -40,13 +41,14 @@ class AuthenticationLoginFragmentActionLogin(
             viewModel.sendError(errorMessage)
             return
         }
-        if (login == userData.login && BCrypt.checkpw(password,userData.password)) {
-            viewModel.successTrue()
+        if (login == userData.login && BCrypt.checkpw(password, userData.password)) {
+            viewModel.successTrue(userId = userData.userId.toInt())
         } else {
             val errorMessage = fragment.getString(R.string.error_wrong_password)
             viewModel.sendError(errorMessage)
         }
     }
+
     private fun checkEmptyFields(login: String, password: String): Boolean {
         return login.isEmpty() && password.isEmpty()
     }

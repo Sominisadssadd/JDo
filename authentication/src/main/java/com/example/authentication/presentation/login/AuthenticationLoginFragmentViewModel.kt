@@ -25,20 +25,22 @@ class AuthenticationLoginFragmentViewModel() : ViewModel() {
     val data: LiveData<Any>
         get() = _data
 
-    private val _success = MutableLiveData<Boolean>()
-    val success: LiveData<Boolean>
+    private val _success = MutableLiveData<Int>()
+    val success: LiveData<Int>
         get() = _success
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean>
         get() = _loading
 
-    fun successTrue() {
-        _success.value = true
+    fun successTrue(userId: Int) {
+        _success.value = userId
     }
+
     fun setLoadingStatus(isLoading: Boolean) {
         _loading.value = isLoading
     }
+
     fun sendError(message: String) {
         _error.value = message
     }

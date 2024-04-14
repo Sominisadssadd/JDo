@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.authentication.R
 import com.example.authentication.databinding.AuthenticationRegisterLayoutBinding
 import com.example.authentication.domain.api.model.User
@@ -11,6 +13,11 @@ import com.example.authentication.presentation.register.actions.AuthenticationRe
 import com.example.authentication.presentation.utils.sharedPreferences.SharedPreferencesAuthentication
 import com.example.core.base.dialog.snackBarErrorMessage
 import com.example.core.base.fragment.BaseFragment
+import com.example.core.extension.getCurrentUserLogin
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
 
 class AuthenticationRegisterFragment :
     BaseFragment<AuthenticationRegisterLayoutBinding, AuthenticationRegisterFragmentViewModel>(
@@ -58,13 +65,16 @@ class AuthenticationRegisterFragment :
     private fun observableEvents() {
         viewModel.apply {
             success.observe(viewLifecycleOwner) {
-                registerClickListener.invoke()
                 val login = binding.editTextLogin.text.toString()
-                authSharedPreferences.setLoginData(login)
+                with(authSharedPreferences) {
+                    setLoginData(login)
+                    setIdData(it)
+                }
+                registerClickListener.invoke()
             }
             result.observe(viewLifecycleOwner) {
                 if (it.success.equals(true)) {
-                    viewModel.setSuccess()
+                    setSuccess(it.data?.userId?.toInt()!!)
                 } else {
                     val errorMessage = getString(R.string.error_user_already_exist)
                     viewModel.setError(errorMessage)

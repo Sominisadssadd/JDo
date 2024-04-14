@@ -52,6 +52,7 @@ class BoardMainFragment(context: Context) :
                         return false
                     }
                     return if (newText.isNotEmpty()) {
+                        isSearching = true
                         val filteredList = listOfTask.filter {
                             it.title.contains(newText)
                         }
@@ -95,7 +96,7 @@ class BoardMainFragment(context: Context) :
             dataBoard.observe(viewLifecycleOwner) {
                 listOfTask.clear()
                 listOfTask.addAll(it.tasks)
-                if(!isSearching){
+                if (!isSearching) {
                     adapter.submitList(it.tasks)
                 }
                 //В зависимости от выбранной доски будет храниться нужное значение

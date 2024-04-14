@@ -25,6 +25,7 @@ class AuthenticationLoginFragment :
     ) {
 
     private lateinit var authSharedPreferences: SharedPreferencesAuthentication
+
     //replace standart initial of actions with dagger
     val loginAction by lazy {
         AuthenticationLoginFragmentActionLogin(this, viewModel)
@@ -41,6 +42,7 @@ class AuthenticationLoginFragment :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         authSharedPreferences = SharedPreferencesAuthentication(requireContext())
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,12 +61,14 @@ class AuthenticationLoginFragment :
             }
         }
     }
-    private fun clearText(){
+
+    private fun clearText() {
         binding.apply {
             editTextLogin.text = null
             editTextPassword.text = null
         }
     }
+
     private fun observableEvents() {
         val buttonText = binding.buttonLogin.text
         val buttonColor = binding.buttonLogin.background
@@ -98,7 +102,10 @@ class AuthenticationLoginFragment :
             success.observe(viewLifecycleOwner) {
                 loginClickListener.invoke()
                 val login = binding.editTextLogin.text.toString()
-                authSharedPreferences.setLoginData(login)
+                with(authSharedPreferences) {
+                    setLoginData(login)
+                    setIdData(it)
+                }
                 setLoadingStatus(false)
             }
         }

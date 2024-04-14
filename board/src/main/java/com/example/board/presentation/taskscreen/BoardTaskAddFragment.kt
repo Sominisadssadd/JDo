@@ -43,8 +43,8 @@ class BoardTaskAddFragment :
     private fun addTask() {
         val title = binding.textViewTitle.text.toString()
         val description = binding.edTextDescription.text.toString()
-        val idStatus = binding.statusSpinner.selectedItemPosition
-        val idPriority = binding.prioritySpinner.selectedItemPosition
+        val idStatus = binding.statusSpinner.selectedItemPosition + POSITION_INCREASE
+        val idPriority = binding.prioritySpinner.selectedItemPosition + POSITION_INCREASE
 
 
         val currentDate = Calendar.getInstance()
@@ -95,6 +95,7 @@ class BoardTaskAddFragment :
             return BoardTaskAddFragment()
         }
 
+        private const val POSITION_INCREASE = 1
         private const val DEFAULT_AI_ID = 0
         private const val EMPTY_FIELD = ""
     }

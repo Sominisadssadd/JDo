@@ -14,7 +14,6 @@ import com.example.profile.R
 import com.example.profile.databinding.MainProfileFragmentBinding
 import com.example.profile.presentation.changeinfo.ChangeInfoFragment
 import com.example.profile.presentation.settings.SettingsProfileFragment
-import com.example.profile.presentation.utils.SharedPreferencesProfile
 
 
 class MainProfileFragment(
@@ -25,7 +24,7 @@ class MainProfileFragment(
         MainProfileFragmentViewModel::class,
         MainProfileViewModelFactory(context)
     ) {
-    private lateinit var authSharedPreferences: SharedPreferencesProfile
+
 
     var navCallback: ((Fragment) -> Unit)? = null
     override fun setUpViews() {
@@ -43,7 +42,6 @@ class MainProfileFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        authSharedPreferences = SharedPreferencesProfile(requireContext())
         observableEvents()
         viewModel.getUserInfo()
     }
@@ -67,8 +65,6 @@ class MainProfileFragment(
                     }
 
                 }
-                authSharedPreferences.setIdData(it.userId.toInt())
-
             }
             success.observe(viewLifecycleOwner) {
                 val message = getString(R.string.snack_bar_message_success)
